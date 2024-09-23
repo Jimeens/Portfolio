@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  background-color: #050c15;
+  color: #f2f2f2;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.home-section {
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  position: static;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.home-section::before {
+  content: "";
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(/files/PNG/wallpaper.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  opacity: 30%;
+  z-index: -1;
+}
+
+.switch-language-toggle {
+  width: 100vw;
+  height:max-content;
+  margin-top: calc(100vh * 0.1498);
+  margin-bottom: calc(100vh * 0.1498);;
+  display: flex;
+  position: relative;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  font-size: calc(100vh * 0.031);
+  position: relative;
+  display: flex;
+  background-color: transparent;
+  width: calc(100vw * 0.1369);
+  height: 2em;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.slider:before {
+  position: absolute;
+  content: "PT";
+  background-color: transparent;
+  height: 90%;
+  width: 50%;
+  left: 0%;
+  color: #f2f2f2;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
+  /* transition: .1s; */
+}
+
+.slider:after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  right: -7px;
+  bottom: -7px;
+  border-radius: 1.71em;
+  z-index: -1;
+  transform: translateX(100%);
+}
+
+.switch input:checked + .slider:before {
+  content: "EN";
+  transform: translateX(100%);
+  color: #f2f2f2;
+}
+
+.switch input {
+  display: none;
+}
+
+.switch span {
+  background-color: transparent;
+  color: #3a3a3a;
+}
+
+.vl {
+  border-left: 1px solid #f2f2f2;
+  height: calc(100vh * 0.062);
+  position: absolute;
+  left: 50%;
+  margin-left: calc(100vh * -1 * 0.00205);
+  top: 0;
+}
+
+.home-section h1 {
+    font-size: calc(100vh * 0.1033);
+    background-color: transparent;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.home-section h1 span {
+    background-color: transparent;
+}
+
+.home-section p {
+    background-color: transparent;
+    text-align: center;
+    font-size: calc(100vh * 0.031);
+    font-weight: 200;
+}
+
+
+
+
+
+
+
+
+.about-section {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+}
+
+.about-section h1 {
+    font-size: calc(100vh * 0.22);
+    margin-left: calc(100vw * 0.06844);
+    margin-top: calc(100vh * 0.1694);
+    margin-bottom: 0px;
+    text-align: left;
+    color: #3a90f3;
+    opacity: 10%;
+}
+
+.about-section p {
+    font-size: calc(100vh * 0.0248);
+    width: 65%;
+    height: calc(100vh * 0.22);
+    text-align: left;
+    float: right;
+    margin-right: calc(100vw * 0.06844);
+    margin-top: 0;
+    margin-bottom: calc(100vh * 0.2799);
+}
