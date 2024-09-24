@@ -44,9 +44,9 @@ body {
 
 .switch-language-toggle {
   width: 100vw;
-  height:max-content;
+  height: max-content;
   margin-top: calc(100vh * 0.1498);
-  margin-bottom: calc(100vh * 0.1498);;
+  margin-bottom: calc(100vh * 0.1498);
   display: flex;
   position: relative;
   background-color: transparent;
@@ -131,57 +131,99 @@ body {
 }
 
 .home-section h1 {
-    font-size: calc(100vh * 0.1033);
-    background-color: transparent;
-    text-align: center;
-    font-weight: 700;
-    margin-bottom: 0px;
-    margin-top: 0px;
+  font-size: calc(100vh * 0.1033);
+  background-color: transparent;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 .home-section h1 span {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .home-section p {
-    background-color: transparent;
-    text-align: center;
-    font-size: calc(100vh * 0.031);
-    font-weight: 200;
+  background-color: transparent;
+  text-align: center;
+  font-size: calc(100vh * 0.031);
+  font-weight: 200;
 }
 
-
-
-
-
-
-
-
 .about-section {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    margin: 0px;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
 }
 
 .about-section h1 {
-    font-size: calc(100vh * 0.22);
-    margin-left: calc(100vw * 0.06844);
-    margin-top: calc(100vh * 0.1694);
-    margin-bottom: 0px;
-    text-align: left;
-    color: #3a90f3;
-    opacity: 10%;
+  font-size: calc(100vh * 0.22);
+  margin-left: calc(100vw * 0.06844);
+  margin-top: calc(100vh * 0.1694);
+  margin-bottom: 0px;
+  text-align: left;
+  color: #3a90f3;
+  opacity: 10%;
 }
 
 .about-section p {
-    font-size: calc(100vh * 0.0248);
-    width: 65%;
-    height: calc(100vh * 0.22);
-    text-align: left;
-    float: right;
-    margin-right: calc(100vw * 0.06844);
-    margin-top: 0;
-    margin-bottom: calc(100vh * 0.2799);
+  font-size: calc(100vh * 0.0248);
+  width: 65%;
+  height: calc(100vh * 0.22);
+  text-align: left;
+  float: right;
+  margin-right: calc(100vw * 0.06844);
+  margin-top: 0;
+  margin-bottom: calc(100vh * 0.2799);
+}
+
+.skills-section {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+}
+
+.skills-section h1 {
+  font-size: calc(100vh * 0.22);
+  margin-right: calc(100vw * 0.06844);
+  margin-top: calc(100vh * 0.1694);
+  margin-bottom: 0px;
+  text-align: right;
+  color: #3a90f3;
+  opacity: 10%;
+}
+
+.skills-container {
+  width: 75%;
+  float: left;
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  margin-left: calc(100vw * 0.06844);
+  margin-bottom: calc(100vh * 0.2089);
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-right: calc(100vw * 0.10266);
+  justify-content: center;
+}
+
+.skill-item svg {
+  fill: #f2f2f2;
+  height: calc(100vh * 0.0744);
+}
+
+.skill-item h2 {
+  color: #3a90f3;
+  width: calc(100vw * 0.0792);
+  margin-top: calc(100vh * 0.0185);
+  margin-bottom: calc(100vh * 0.0185);
+  font-size: calc(100vh * 0.023);
 }
