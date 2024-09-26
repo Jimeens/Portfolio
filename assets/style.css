@@ -54,71 +54,22 @@ body {
   justify-content: center;
 }
 
-/* The switch - the box around the slider */
-.switch {
-  font-size: calc(100vh * 0.031);
-  position: relative;
-  display: flex;
+.langWrap{
   background-color: transparent;
-  width: calc(100vw * 0.1369);
-  height: 2em;
 }
 
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
+.switch-language-toggle a {
   background-color: transparent;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  font-weight: 600;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.slider:before {
-  position: absolute;
-  content: "PT";
-  background-color: transparent;
-  height: 90%;
-  width: 50%;
-  left: 0%;
-  color: #f2f2f2;
-  display: grid;
-  align-content: center;
-  justify-content: center;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
-  /* transition: .1s; */
-}
-
-.slider:after {
-  content: "";
-  position: absolute;
-  top: -7px;
-  left: -7px;
-  right: -7px;
-  bottom: -7px;
-  border-radius: 1.71em;
-  z-index: -1;
-  transform: translateX(100%);
-}
-
-.switch input:checked + .slider:before {
-  content: "EN";
-  transform: translateX(100%);
-  color: #f2f2f2;
-}
-
-.switch input {
-  display: none;
-}
-
-.switch span {
-  background-color: transparent;
+  text-transform: uppercase;
   color: #3a3a3a;
+  text-decoration: none;
+  font-size: calc(100vh * 0.031);
+  padding: 0 50px;
+  font-weight: 700;
+}
+
+.switch-language-toggle a.active {
+  color: #f2f2f2;
 }
 
 .vl {
@@ -127,7 +78,7 @@ body {
   position: absolute;
   left: 50%;
   margin-left: calc(100vh * -1 * 0.00205);
-  top: 0;
+  top: -6px;
 }
 
 .home-section h1 {
@@ -156,6 +107,22 @@ body {
   width: 100vw;
   height: 100vh;
   margin: 0px;
+  z-index: 1;
+}
+
+.about-section::after {
+  content: "";
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(/files/PNG/Stars.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+  opacity: 10%;
+  background-size: 20%;
+  margin-top: calc(100vh * 0.0619);
+  margin-left: calc(100vw * -0.0617);
 }
 
 .about-section h1 {
@@ -168,8 +135,22 @@ body {
   opacity: 10%;
 }
 
+.about-section h1::before {
+  content: "";
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(/files/PNG/Dots.png);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 10%;
+  margin-top: calc(100vh * -0.1549);
+}
+
 .about-section p {
   font-size: calc(100vh * 0.0248);
+  font-weight: 200;
   width: 65%;
   height: calc(100vh * 0.22);
   text-align: left;
@@ -177,6 +158,20 @@ body {
   margin-right: calc(100vw * 0.06844);
   margin-top: 0;
   margin-bottom: calc(100vh * 0.2799);
+}
+
+.about-section p::before {
+  content: "";
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(/files/PNG/Circle-pattern.png);
+  background-repeat: no-repeat;
+  background-size: 10%;
+  opacity: 10%;
+  margin-top: calc(100vh * -0.0413);
+  margin-left: calc(100vw * -0.0432)
 }
 
 .skills-section {
@@ -187,6 +182,21 @@ body {
   margin: 0px;
 }
 
+.skills-section::before {
+  content: "";
+  display: flex;
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  background-image: url(/files/PNG/Dots-up.png);
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 2.5%;
+  opacity: 10%;
+  margin-left: calc(100vw * 0.0690);
+  margin-top: calc(100vh * 0.0619);
+}
+
 .skills-section h1 {
   font-size: calc(100vh * 0.22);
   margin-right: calc(100vw * 0.06844);
@@ -195,6 +205,20 @@ body {
   text-align: right;
   color: #3a90f3;
   opacity: 10%;
+}
+
+.skills-section h1::before {
+  content: "";
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(/files/PNG/Moon.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 20%;
+  margin-top: calc(100vh * -0.2066);
+  margin-left: calc(100vw * -0.0617);
 }
 
 .skills-container {
@@ -227,3 +251,194 @@ body {
   margin-bottom: calc(100vh * 0.0185);
   font-size: calc(100vh * 0.023);
 }
+
+.projects-section {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+}
+
+.project-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.project-title h1{
+  font-size: calc(100vh * 0.22);
+  margin-left: calc(100vw * 0.06844);
+  margin-top: calc(100vh * 0.1694);
+  margin-bottom: 0px;
+  text-align: left;
+  color: #3a90f3;
+  opacity: 10%;
+}
+
+.project-switch {
+  display: flex;
+  height: calc(100vh * 0.22);
+  align-items: center;
+  justify-content: center;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: calc(100vh * 0.0619);
+  align-items: center;
+}
+
+.project-desc {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 35%;
+  margin-top: 0;
+  margin-left: calc(100vw * 0.06844);
+  margin-bottom: calc(100vh * 0.0619);
+}
+
+.project-desc h2 {
+  font-size: calc(100vh * 0.0413);
+  font-weight: 700;
+}
+
+.project-desc h3 {
+  font-size: calc(100vh * 0.0145);
+  color: #3a90f3;
+}
+
+.project-desc h4 {
+  font-size: calc(100vh * 0.0145);
+}
+
+.project-desc p {
+  font-size: calc(100vh * 0.0145);
+  font-weight: 100;
+  max-height: calc(100vh * 0.2066);
+  overflow-y: auto;
+  margin-bottom: calc(100vh * 0.0103);
+  padding-right: calc(100vw * 0.0617);
+}
+
+.project-desc h4 {
+  margin-bottom: calc(100vh * 0.0310);
+}
+
+.project-desc p::-webkit-scrollbar {
+  border: none;
+  width: calc(100vw * 0.0056);
+}
+
+.project-desc p::-webkit-scrollbar-thumb {
+  background-color:#8b8b8b;
+  border-radius: calc(100vw * 0.0124);
+}
+
+.project-desc p::-webkit-scrollbar-thumb:hover {
+  background-color:#636363;
+  border-radius: calc(100vw * 0.0124);
+}
+
+.my-button {
+  width: 35%;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  background-color: transparent;
+  color: #f2f2f2;
+  padding-top: calc(100vh * 0.0124);
+  padding-bottom: calc(100vh * 0.0124);
+  padding-left: calc(100vw * 0.0494);
+  padding-right: calc(100vw * 0.0494);
+  margin-bottom: calc(100vh * 0.0248);
+  font-size: calc(100vh * 0.0207);
+  border: #3a90f3 1px solid;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.my-button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3a90f3;
+  transform: translateX(-100%);
+  transition: all .6s;
+  z-index: -1;
+}
+
+.my-button:hover::before {
+  transform: translateX(0);
+}
+
+.my-button span {
+  display: inline-block;
+  position: relative;
+  transition: all 0.4s ease 0s;
+  background-color: transparent;
+}   
+
+.my-button span::after {
+  font-family: 'Font Awesome 5 Free';
+  content: "\f061";
+  font-weight: 900;
+  position: absolute;
+  line-height: calc(100vh * 0.0361);
+  top: 0px;
+  font-size: calc(100vh * 0.0207);
+  right: calc(100vw * -0.0198);
+  color: #f2f2f2;
+  opacity: 0;
+  transition: all 0.4s ease 0s;
+}
+
+.my-button:hover span {
+  padding-right: calc(100vw * 0.0198);
+}
+
+.my-button:hover span::after {
+  right: 0px;
+  opacity: 1;
+}
+
+.project-thumb{
+  display: flex;
+  height: 100%;
+  width: 65%;
+  justify-content: center;
+}
+
+.project-thumb::before {
+  content: "";
+  display: flex;
+  height: 60%;
+  width: 65%;
+  position: absolute;
+  background-image: url(/files/PNG/Mockup-Notebook.png);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center center;
+  margin-right: calc(100vw * 0.06844);
+  z-index: 2;
+}
+
+.project-thumb img {
+  width: calc(100vw * 0.4);
+  height: calc(100vh * 0.46);
+  position: relative;
+  top: calc(100vh * 0.0569);
+  left: calc(100vw * -0.033);
+  object-fit: cover;
+}
+
+
+/* 2736                    3538 */
