@@ -2,11 +2,27 @@ const langPt = document.querySelector(".langWrap");
 const link = document.querySelectorAll("a");
 const whatIm1Pt = document.querySelector(".whatIm1");
 const whatIm2Pt = document.querySelector(".whatIm2");
+
 const aboutTitlePt = document.querySelector(".aboutTitle");
 const aboutDescBoldPt = document.querySelector(".aboutDescBold");
-const skillsTitlePt = document.querySelector(".skillsTitle");
-const projectTitlePt = document.querySelector(".projectTitle")
 
+const skillsTitlePt = document.querySelector(".skillsTitle");
+
+const projectTitlePt = document.querySelector(".projectTitle");
+
+const projectName1Pt = document.querySelector(".projectName1");
+const projectStatus1Pt = document.querySelector(".projectStatus1");
+const projectDesc1Pt = document.querySelector(".projectDesc1");
+const projectTech1Pt = document.querySelector(".projectTech1");
+const projectView1Pt = document.querySelector(".projectView1");
+
+const projectName2Pt = document.querySelector(".projectName2");
+const projectStatus2Pt = document.querySelector(".projectStatus2");
+const projectDesc2Pt = document.querySelector(".projectDesc2");
+const projectTech2Pt = document.querySelector(".projectTech2");
+const projectView2Pt = document.querySelector(".projectView2");
+
+const contactTitlePt = document.querySelector(".contactTitle");
 
 link.forEach(pt => {
     pt.addEventListener('click', () => {
@@ -20,6 +36,21 @@ link.forEach(pt => {
         aboutDescBoldPt.textContent = data[attr].aboutDescBold;
         skillsTitlePt.textContent = data[attr].skillsTitle;
         projectTitlePt.textContent = data[attr].projectTitle;
+        
+        projectName1Pt.textContent = data[attr].projectName1;
+        projectStatus1Pt.textContent = data[attr].projectStatus1;
+        projectDesc1Pt.textContent = data[attr].projectDesc1;
+        projectTech1Pt.textContent = data[attr].projectTech1;
+        projectView1Pt.textContent = data[attr].projectView1;
+        
+        projectName2Pt.textContent = data[attr].projectName2;
+        projectStatus2Pt.textContent = data[attr].projectStatus2;
+        projectDesc2Pt.textContent = data[attr].projectDesc2;
+        projectTech2Pt.textContent = data[attr].projectTech2;
+        projectView2Pt.textContent = data[attr].projectView2;
+
+        contactTitlePt.textContent = data[attr].contactTitle;
+
     })
 })
 
@@ -28,18 +59,52 @@ var data = {
     {
         "whatIm1": "Freelancer",
         "whatIm2": "& Desenvolvedor Front-end.",
+
         "aboutTitle": "SOBRE",
         "aboutDescBold": "Assim como a física transforma o entendimento do universo, meu amor pelo desenvolvimento front-end transforma ideias em experiências visuais incríveis. Transicionei minha carreira de bacharel em física para desenvolvedor front-end e a cada dia que passa tenho mais certeza de que foi a escolha certa para minha carreira profissional.",
+
         "skillsTitle": "HABILIDADES",
+
         "projectTitle": "PROJETOS",
+
+        "projectName1": "WEBSITE PESSOAL",
+        "projectStatus1": "PROJETO DE ESTUDO • WEBSITE",
+        "projectDesc1": "Afim de estudar linguagens de programação usadas na área de Front-end, como HTML5, CSS3 e Javascript principalmente, construi um website para armazenar informações sobre minha graduação em física e algumas outras em relação aos projetos que estou trabalhando no momento. O projeto visa não só estudo próprio, mas também ajudar novos físicos.",
+        "projectTech1": "HTML5 • CSS3 • JavaScript",
+        "projectView1": "Visite o website",
+
+        "projectName2": "PORTFÓLIO",
+        "projectStatus2": "PROJETO DE ESTUDO • WEBSITE",
+        "projectDesc2": "Como desenvolvedor Front-end, é relativamente obrigatório a criação de um portfólio para apresentar informações profissionais, como uma breve apresentação sobre mim, minhas habilidades, todos os projetos que participei e dados de contato para pessoas ou empresas interessadas em meus serviços.",
+        "projectTech2": "HTML5 • CSS3 • JavaScript",
+        "projectView2": "Visite o website",
+
+        "contactTitle": "CONTATO",
+
     },
     "english":
     {
         "whatIm1": "Freelancer",
         "whatIm2": "& Front-end Developer.",
+
         "aboutTitle": "ABOUT",
         "aboutDescBold": "Just as physics transforms our understanding of the universe, my love for front-end development transforms ideas into incredible visual experiences. I transitioned my career from a bachelor's degree in physics to a front-end developer, and with each passing day, I become more certain that it was the right choice for my professional career.",
+
         "skillsTitle": "SKILLS",
+
         "projectTitle": "PROJECTS",
+
+        "projectName1": "PERSONAL WEBSITE",
+        "projectStatus1": "STUDY CASE • WEBSITE",
+        "projectDesc1": "In order to study programming languages used in the Front-end area, mainly HTML5, CSS3, and JavaScript, I built a website to store information about my degree in physics and some other projects I am currently working on. The project aims not only for my own study but also to help new physicists.",
+        "projectTech1": "HTML5 • CSS3 • JavaScript",
+        "projectView1": "Visit website",
+
+        "projectName2": "PORTFOLIO",
+        "projectStatus2": "STUDY CASE • WEBSITE",
+        "projectDesc2": "As a Front-end developer, creating a portfolio is relatively mandatory to showcase professional information, such as a brief introduction about myself, my skills, all the projects I have participated in, and contact information for individuals or companies interested in my services.",
+        "projectTech2": "HTML5 • CSS3 • JavaScript",
+        "projectView2": "Visit website",
+        
     }
 }
