@@ -39,7 +39,7 @@ body {
   background-size: cover;
   background-position: center center;
   opacity: 30%;
-  z-index: -1;
+  z-index: 1;
 }
 
 .vl {
@@ -50,15 +50,19 @@ body {
   margin-top: calc(100vh * 0.1498);
   top: calc(100vh * -0.006);
   transform: translateY(0);
-  animation: upline 1s;
+  animation: upline 1s forwards;
+  opacity: 0;
+  z-index: 1;
 }
 
 @keyframes upline {
   0% {
     transform: translateY(-100%);
+    opacity: 0;
   }
   100% {
     transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -74,17 +78,17 @@ body {
   justify-content: center;
   z-index: 1;
   transform: scale(0);
-  animation: 1s cubic-bezier(0,0.1,0.12,0.99) 0s 1 normal forwards running surge;
+  animation: 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards running
+    emerge;
   animation-delay: 0.8s;
 }
 
-@keyframes surge {
+@keyframes emerge {
   0% {
     transform: scale(0);
-    
   }
   100% {
-    transform: scale(1); 
+    transform: scale(1);
   }
 }
 
@@ -113,26 +117,124 @@ body {
   z-index: 1;
 }
 
-.home-section h2 {
+.home-section h1 {
   font-size: calc(100vh * 0.1033);
   background-color: transparent;
+  position: relative;
   text-align: center;
   font-weight: 700;
   margin-bottom: 0px;
   margin-top: 0px;
   z-index: 1;
+  transform: translateY(100%);
+  animation: 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards running
+    emerging;
+  animation-delay: 0.8s;
+  z-index: 1;
+  opacity: 0;
 }
 
-.home-section h2 span {
+@keyframes emerging {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
+.home-section h1 span {
   background-color: transparent;
 }
 
-.home-section p {
+.whatIm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: transparent;
+  margin-bottom: calc(100vh * 0.3264);
+}
+
+.whatIm-style {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+}
+
+.whatIm1 {
+  background-color: transparent;
+  display: inline-block;
   text-align: center;
+  font-family: monospace;
   font-size: calc(100vh * 0.031);
+  width: 100%;
   font-weight: 200;
   z-index: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 0.5s steps(10, end) 2s forwards;
+  animation-delay: 2s;
+  opacity: 0;
+}
+
+.whatIm2 {
+  background-color: transparent;
+  display: inline-block;
+  text-align: center;
+  font-family: monospace;
+  font-size: calc(100vh * 0.031);
+  width: 100%;
+  font-weight: 200;
+  z-index: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 1.5s steps(26, end) 2s forwards;
+  animation-delay: 2.5s;
+  opacity: 0;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+    opacity: 1;
+  }
+  0%,
+  100% {
+    opacity: 1;
+  }
+}
+
+.logo {
+  width: 100vw;
+  height: calc(100vh * 0.062);
+  position: relative;
+  bottom: calc(100vh * 0.2117);
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  margin-bottom: calc(100vh * 0.1498);
+}
+
+.logo img {
+  height: calc(100vh * 0.062);
+  background-color: transparent; 
+  z-index: 1;
+  transform: translateY(-100%);
+  animation: 1s downimage forwards;
+  opacity: 0;
+  animation-delay: 4s;
+}
+
+@keyframes downimage {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .about-section {
@@ -149,14 +251,12 @@ body {
 .about-section h1 {
   background-color: transparent;
   font-size: calc(100vh * 0.22);
-  /* margin-left: calc(100vw * 0.06844); */
   margin-left: 100px;
   margin-top: calc(100vh * 0.1694);
   margin-bottom: 0px;
   text-align: left;
   color: #3a90f3;
   opacity: 10%;
-  z-index: 3;
 }
 
 .about-section p {
@@ -169,31 +269,110 @@ body {
   float: right;
   margin-right: calc(100vw * 0.06844);
   margin-top: 0;
-  z-index: 3;
 }
 
-.about-section b {
+.aboutDescBold, .aboutDescNormal {
+  color: transparent;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  transition: 1s;
+}
+
+.aboutDescBold.reveal, .aboutDescNormal.reveal {
+  color: #f2f2f2;
+  animation: revealTextAnimation 0.64s ease forwards;
+}
+
+.aboutDescBold::before, .aboutDescNormal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.aboutDescBold.reveal::before, .aboutDescNormal.reveal::before {
+  background: #3a90f3;
+  animation: blockRevealAnimation 1.2s ease forwards;
+}
+
+.about-section b, span {
   background-color: transparent;
 }
 
-.about-section span {
-  background-color: transparent;
-}
-
-.about-section a {
+.text a {
   font-size: calc(100vh * 0.0248);
   background-color: transparent;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
   font-weight: 900;
-  width: 65%;
-  height: calc(100vh * 0.22);
+  width: 100%;
   text-align: left;
   margin-right: calc(100vw * 0.06844);
   margin-top: 0;
-  margin-bottom: calc(100vh * 0.2799);
   text-decoration: none;
   cursor: pointer;
+  color: transparent;
+  transition: 1s;
+}
+
+.text a.reveal {
   color: #3a90f3;
-  z-index: 3;
+  animation: revealLinkAnimation 0.64s ease forwards;
+}
+
+.text a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.text a.reveal::before {
+  background: #3a90f3;
+  animation: blockRevealAnimation 1.2s ease forwards;
+}
+
+@keyframes blockRevealAnimation {
+  0% {
+    left: -100%;
+  }
+  40% {
+    left: 0%;
+  }
+  60% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes revealTextAnimation {
+  0% {
+    color: transparent;
+  }
+  40% {
+    color: transparent;
+  }
+  60% {
+    color: #f2f2f2;
+  }
+}
+
+@keyframes revealLinkAnimation {
+  0% {
+    color: transparent;
+  }
+  40% {
+    color: transparent;
+  }
+  60% {
+    color: #3a90f3;
+  }
 }
 
 .skills-section {
@@ -207,7 +386,6 @@ body {
 
 .skills-section h1 {
   font-size: calc(100vh * 0.22);
-  /* margin-right: calc(100vw * 0.06844); */
   margin-right: 100px;
   margin-top: calc(100vh * 0.1694);
   margin-bottom: 0px;
@@ -217,8 +395,8 @@ body {
   opacity: 10%;
 }
 
-.skills-container {
-  width: 75%;
+.hard-skills-container {
+  width: 60%;
   float: left;
   display: flex;
   flex-wrap: wrap;
@@ -257,6 +435,38 @@ body {
   background-color: transparent;
 }
 
+.soft-skills-container {
+  display: inline-block;
+  flex-direction: column;
+  width: 25%;
+  position: relative;
+  margin-right: calc(100vw * 0.06844);
+}
+
+.skill h2 {
+  margin-top: 0;
+  padding-top: 0;
+  text-transform: uppercase;
+  font-size: xx-large;
+}
+
+.skill h2::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 5px;
+  background: #3a90f3;
+  margin: 0 0;
+  position: relative;
+  top: 25px;
+  left: -60px;
+  border-radius: 3px;
+}
+
+.skill p {
+  font-weight: 100;
+}
+
 .projects-section {
   display: flex;
   flex-direction: column;
@@ -267,7 +477,6 @@ body {
 
 .projects-section h1 {
   font-size: calc(100vh * 0.22);
-  /* margin-left: calc(100vw * 0.06844); */
   margin-left: 100px;
   margin-top: calc(100vh * 0.1694);
   margin-bottom: 0px;
@@ -292,7 +501,6 @@ body {
   margin-left: calc(100vw * 0.06844);
   margin-right: calc(100vw * 0.06844);
   align-items: center;
-  /* border: 1px solid #fff; */
 }
 
 .project-desc {
@@ -464,7 +672,6 @@ body {
 
 .contact-title h1 {
   font-size: calc(100vh * 0.22);
-  /* margin-right: calc(100vw * 0.06844); */
   margin-right: 100px;
   margin-top: calc(100vh * 0.1694);
   margin-bottom: calc(100vh * 0.1694);
